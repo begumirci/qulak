@@ -29,7 +29,7 @@ const data = [
     ],
     materials: [
       {
-        img: '/public/pdf.svg',
+        img: '/pdf.svg',
         title: 'Lookscout Resources',
         subtitle: '80.69 mb',
         icon: (
@@ -48,7 +48,7 @@ const data = [
         ),
       },
       {
-        img: '/public/mp4.svg',
+        img: '/mp4.svg',
         title: 'Lookscout Updates',
         subtitle: '320.32 mb',
         icon: (
@@ -67,7 +67,7 @@ const data = [
         ),
       },
       {
-        img: '/public/pdf.svg',
+        img: '/pdf.svg',
         title: 'Lookscout Guides',
         subtitle: '320.32 mb',
         icon: (
@@ -88,7 +88,7 @@ const data = [
         ),
       },
       {
-        img: '/public/zip.svg',
+        img: '/zip.svg',
         title: 'Lookscout Design System',
         subtitle: '320.32 mb',
         icon: (
@@ -109,7 +109,7 @@ const data = [
         ),
       },
       {
-        img: '/public/mp4.svg',
+        img: '/mp4.svg',
         title: 'Lookscout Guides',
         subtitle: '125.05 mb',
         icon: (
