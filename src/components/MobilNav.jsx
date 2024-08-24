@@ -31,7 +31,7 @@ export default function MobilNav() {
           xmlns='http://www.w3.org/2000/svg'
           width='16'
           height='16'
-          fill='currentColor'
+          fill='var(--text-color)'
           className='bi bi-arrow-right'
           viewBox='0 0 16 16'
           type='button'
@@ -68,7 +68,7 @@ export default function MobilNav() {
                     xmlns='http://www.w3.org/2000/svg'
                     width='16'
                     height='16'
-                    fill='currentColor'
+                    fill='var(--text-color)'
                     className='bi bi-arrow-down-short'
                     viewBox='0 0 16 16'
                   >
