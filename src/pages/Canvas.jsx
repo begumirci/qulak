@@ -1,8 +1,10 @@
+import { useState } from 'react';
 import data from '../data';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
 export default function Canvas({ isOpenCanvas, toggleCanvas }) {
+  const [isActive, setIsActive] = useState(false);
   const percentage = 75;
   return (
     <div
@@ -71,7 +73,7 @@ export default function Canvas({ isOpenCanvas, toggleCanvas }) {
         <div className='canvas__bottom'>
           <div className='canvas__profile-cart d-flex align-items-center justify-content-between'>
             <div className='d-flex align-items-center'>
-              <img src='/public/sidebarIcons/AvataravatarBrian.svg' alt='' />
+              <img src='/sidebarIcons/AvataravatarBrian.svg' alt='' />
               <h6>Briand Ford</h6>
             </div>
             <svg
@@ -107,11 +109,7 @@ export default function Canvas({ isOpenCanvas, toggleCanvas }) {
                 className='align-self-start'
                 style={{ paddingBlock: '10px' }}
               >
-                <img
-                  src='/public/sidebarIcons/Iconclose.svg'
-                  alt=''
-                  role='button'
-                />
+                <img src='/sidebarIcons/Iconclose.svg' alt='' role='button' />
               </div>
             </div>
 

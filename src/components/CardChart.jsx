@@ -41,7 +41,7 @@ export default function CardChart() {
             <span style={{ color: 'var(--blue-color)', paddingRight: '6px' }}>
               Open
             </span>
-            <img src='../../public/open.svg' alt='' />
+            <img src='/open.svg' alt='' />
           </div>
         </div>
       </footer>

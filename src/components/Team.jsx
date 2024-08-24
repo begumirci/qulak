@@ -48,6 +48,7 @@ export default function Team() {
                   height='20px'
                   viewBox='0 -960 960 960'
                   width='20px'
+                  role='button'
                   fill='var(--dark-color)'
                 >
                   <path d='m288-96-68-68 316-316-316-316 68-68 384 384L288-96Z' />

@@ -385,7 +385,7 @@ button {
 
 .mobilNav-list__item.active .mobilNav-list__title {
   background-color: var(--icon-bg-hover);
-  border-left: 3px solid var(--icon-strike-hover);
+  border-right: 3px solid var(--icon-strike-hover);
 
   & svg path {
     stroke: var(--icon-strike-hover);
@@ -408,6 +408,15 @@ button {
 .sidebar-list__bottom div:hover,
 .canvas-list__item:hover {
   background-color: var(--icon-bg-hover);
+
+  & svg path {
+    stroke: var(--icon-strike-hover);
+  }
+}
+
+.canvas-list__item.active {
+  background-color: var(--icon-bg-hover);
+  border-left: 3px solid var(--icon-strike-hover);
 
   & svg path {
     stroke: var(--icon-strike-hover);
@@ -437,7 +446,6 @@ button {
   z-index: 1;
   overflow: hidden;
   height: 100vh;
-  transition: width 0.2s ease-in-out;
 
   &.show {
     width: 273px;
