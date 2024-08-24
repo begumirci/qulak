@@ -29,7 +29,7 @@ const data = [
     ],
     materials: [
       {
-        img: '/pdf.svg',
+        img: './public/pdf.svg',
         title: 'Lookscout Resources',
         subtitle: '80.69 mb',
         icon: (
@@ -48,7 +48,7 @@ const data = [
         ),
       },
       {
-        img: '/mp4.svg',
+        img: './public/mp4.svg',
         title: 'Lookscout Updates',
         subtitle: '320.32 mb',
         icon: (
@@ -67,7 +67,7 @@ const data = [
         ),
       },
       {
-        img: '/pdf.svg',
+        img: './public/pdf.svg',
         title: 'Lookscout Guides',
         subtitle: '320.32 mb',
         icon: (
@@ -88,7 +88,7 @@ const data = [
         ),
       },
       {
-        img: '/zip.svg',
+        img: './public/zip.svg',
         title: 'Lookscout Design System',
         subtitle: '320.32 mb',
         icon: (
@@ -109,7 +109,7 @@ const data = [
         ),
       },
       {
-        img: '/mp4.svg',
+        img: './public/mp4.svg',
         title: 'Lookscout Guides',
         subtitle: '125.05 mb',
         icon: (
@@ -130,31 +130,31 @@ const data = [
     ],
     transactions: [
       {
-        img: '/public/pinterest.svg',
+        img: './public/pinterest.svg',
         title: 'Pinterest Team',
         date: 'Jan 23 2022',
         status: 'Done',
       },
       {
-        img: '/public/sketch.svg',
+        img: './public/sketch.svg',
         title: 'Sketch Team',
         date: 'Jun 15 2022',
         status: 'Failed',
       },
       {
-        img: '/public/gitlab.svg',
+        img: './public/gitlab.svg',
         title: 'Gitlab Team',
         date: 'Jan 15 2022',
         status: 'Done',
       },
       {
-        img: '/public/click.svg',
+        img: './public/click.svg',
         title: 'Clickup',
         date: 'Jan 15 2022',
         status: 'Failed',
       },
       {
-        img: '/public/delivero.svg',
+        img: './public/delivero.svg',
         title: 'Deliverooo',
         date: 'Jan 15 2022',
         status: 'Done',
