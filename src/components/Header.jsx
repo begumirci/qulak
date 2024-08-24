@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <div>
       <div
-        className='p-4 d-flex justify-content-between align-items-center border-bottom d-lg-none'
+        className='mobil_header p-4 d-flex justify-content-between align-items-center border-bottom d-lg-none'
         style={{ backgroundColor: 'var(--white-color)' }}
       >
         <svg
