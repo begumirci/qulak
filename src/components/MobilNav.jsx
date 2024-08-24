@@ -3,11 +3,16 @@ import { useState } from 'react';
 
 export default function MobilNav() {
   const [isActive, setIsActive] = useState(false);
+  const [subActive, setSubActive] = useState(false);
 
   function handleClickActive(id) {
+    setIsActive(!isActive);
     if (id == 1) {
-      setIsActive(!isActive);
+      setSubActive(true);
     }
+  }
+  function handleSubClick() {
+    setSubActive(false);
   }
   return (
     <div
@@ -27,7 +32,7 @@ export default function MobilNav() {
           width='16'
           height='16'
           fill='currentColor'
-          class='bi bi-arrow-right'
+          className='bi bi-arrow-right'
           viewBox='0 0 16 16'
           type='button'
           data-bs-dismiss='offcanvas'
@@ -42,7 +47,7 @@ export default function MobilNav() {
 
       <div className='d-flex flex-column gap-2 '>
         {data[0].mobilNavbar.map((x) => (
-          <>
+          <div>
             {x.subCategory ? (
               <div
                 className={`mobilNav-list__item  ${isActive ? 'active' : ''}`}
@@ -64,7 +69,7 @@ export default function MobilNav() {
                     width='16'
                     height='16'
                     fill='currentColor'
-                    class='bi bi-arrow-down-short'
+                    className='bi bi-arrow-down-short'
                     viewBox='0 0 16 16'
                   >
                     <path
@@ -77,7 +82,13 @@ export default function MobilNav() {
                 <div className='collapse ps-5' id='collapseExample'>
                   <div className='row mt-2'>
                     {x.subCategory.map((sub) => (
-                      <div className='collapse__item col-12 d-flex align-items-center gap-3 py-2  px-2 '>
+                      <div
+                        key={x.id}
+                        className={`collapse__item col-12 d-flex align-items-center gap-3 py-2  px-2 ${
+                          sub.id == 5 && subActive ? 'active' : ''
+                        }`}
+                        onClick={handleSubClick}
+                      >
                         <div>{sub.icon}</div>
                         <h6>{sub.name}</h6>
                       </div>
@@ -93,7 +104,7 @@ export default function MobilNav() {
                 </div>
               </div>
             )}
-          </>
+          </div>
         ))}
       </div>
     </div>
