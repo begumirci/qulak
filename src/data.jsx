@@ -130,25 +130,25 @@ const data = [
     ],
     transactions: [
       {
-        img: './public/pinterest.svg',
+        img: '/pinterest.svg',
         title: 'Pinterest Team',
         date: 'Jan 23 2022',
         status: 'Done',
       },
       {
-        img: './public/sketch.svg',
+        img: '/sketch.svg',
         title: 'Sketch Team',
         date: 'Jun 15 2022',
         status: 'Failed',
       },
       {
-        img: './public/gitlab.svg',
+        img: '/gitlab.svg',
         title: 'Gitlab Team',
         date: 'Jan 15 2022',
         status: 'Done',
       },
       {
-        img: './public/click.svg',
+        img: '/click.svg',
         title: 'Clickup',
         date: 'Jan 15 2022',
         status: 'Failed',
