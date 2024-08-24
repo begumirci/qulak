@@ -28,7 +28,7 @@ export default function Team() {
               key={index}
             >
               <div className='d-flex  align-items-center gap-10px'>
-                <img src='../../public/Avatar.svg' alt='' />
+                <img src='/Avatar.svg' alt='' />
                 <div>
                   <h6>{info.name}</h6>
                   <p>{info.job}</p>
