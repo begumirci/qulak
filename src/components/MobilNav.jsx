@@ -4,8 +4,10 @@ import { useState } from 'react';
 export default function MobilNav() {
   const [isActive, setIsActive] = useState(false);
 
-  function handleClickActive() {
-    setIsActive(!isActive);
+  function handleClickActive(id) {
+    if (id == 1) {
+      setIsActive(!isActive);
+    }
   }
   return (
     <div
@@ -17,7 +19,7 @@ export default function MobilNav() {
     >
       <header className='padding-inline-20px  canvas__profile-cart  d-flex align-items-center justify-content-between border-bottom'>
         <div className='d-flex align-items-center justify-content-between py-4'>
-          <img src='/public/sidebarIcons/AvataravatarBrian.svg' alt='' />
+          <img src='/sidebarIcons/AvataravatarBrian.svg' alt='' />
           <h6>Briand Ford</h6>
         </div>
         <svg
@@ -43,14 +45,14 @@ export default function MobilNav() {
           <>
             {x.subCategory ? (
               <div
-                className={`mobilNav-list__item ${isActive ? 'active' : ''}`}
+                className={`mobilNav-list__item  ${isActive ? 'active' : ''}`}
                 key={x.id}
               >
                 <div
                   data-bs-toggle='collapse'
                   href='#collapseExample'
                   aria-controls='collapseExample'
-                  className='mobilNav-list__title d-flex align-items-center justify-content-between gap-2 padding-inline-20px'
+                  className='mobilNav-list__title  d-flex align-items-center justify-content-between gap-2 padding-inline-20px'
                   onClick={() => handleClickActive(x.id)}
                 >
                   <div className='d-flex gap-3'>
