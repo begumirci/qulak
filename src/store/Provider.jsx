@@ -40,6 +40,10 @@ export default function Provider({ children }) {
     setIsOpenCanvas(!isOpenCanvas);
   }
 
+  function canvasOpen() {
+    setIsOpenCanvas(true);
+  }
+
   return (
     <ContextData.Provider
       value={{
@@ -51,6 +55,7 @@ export default function Provider({ children }) {
         canvasWidth,
         canvasRef,
         toggleCanvas,
+        canvasOpen,
       }}
     >
       {children}

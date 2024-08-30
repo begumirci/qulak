@@ -3,16 +3,18 @@ import data from '../data';
 import { ContextData } from '../store/Provider';
 
 export default function MainSidebar({ toggleCanvas, isOpenCanvas, id, setId }) {
-  const { changeTheme, theme } = useContext(ContextData);
+  const { changeTheme, theme, canvasOpen } = useContext(ContextData);
   console.log(theme);
 
   function handleClickIcon(icon) {
-    if (icon == id) {
+    if (icon === id) {
       toggleCanvas();
+    } else {
+      setId(icon);
+      canvasOpen();
     }
-
-    setId(icon);
   }
+
   return (
     <div className='sidebar_all d-none d-lg-block  border-end '>
       <div className='sidebar-list px-3 pt-3 d-flex flex-column justify-content-between  '>
