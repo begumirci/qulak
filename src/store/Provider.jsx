@@ -4,7 +4,8 @@ import { useState, useEffect, useRef } from 'react';
 export const ContextData = createContext();
 
 export default function Provider({ children }) {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+
   const [isOpenCanvas, setIsOpenCanvas] = useState(false);
   const [canvasWidth, setCanvasWidth] = useState(0);
   const canvasRef = useRef(null);
@@ -22,6 +23,10 @@ export default function Provider({ children }) {
       window.removeEventListener('resize', updateCanvasWidth);
     };
   }, [isOpenCanvas]);
+
+  useEffect(() => {
+    localStorage.setItem('theme', theme);
+  }, [theme]);
 
   function changeTheme() {
     if (theme == 'light') {

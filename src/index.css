@@ -441,6 +441,10 @@ button {
   background-color: var(--icon-bg-hover);
   border-left: 3px solid var(--icon-strike-hover);
 
+  & h6 {
+    color: var(--icon-strike-hover);
+  }
+
   & svg path {
     stroke: var(--icon-strike-hover);
   }
