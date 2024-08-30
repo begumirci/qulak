@@ -22,14 +22,15 @@ export default function Screen() {
         <Cards />
         <CardChart />
         <BrianFordHeader />
-        <div className='row g-3 g-xxl-4 mt-0'>
-          <div className='col-12 col-md-6  col-xxl-4 '>
+
+        <div className='d-flex flex-wrap gap-3 gap-xxl-4'>
+          <div className=' flex-fill '>
             <Team />
           </div>
-          <div className='col-12 col-md-6 col-xxl-4 '>
+          <div className='flex-fill '>
             <Materials />
           </div>
-          <div className='col-12 col-md-6 col-xxl-4 '>
+          <div className='flex-fill '>
             <Transactions />
           </div>
         </div>

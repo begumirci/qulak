@@ -612,6 +612,18 @@ button {
   padding: 0 !important;
   margin: 0;
 }
+.row.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+}
+.row.no-gutters > .col {
+  padding-right: 0;
+  padding-left: 0;
+}
+.row.gap-3 > .col {
+  margin-bottom: 1rem; /* Sadece alt boşluk için, diğer boşluklar için ayarlama yapabilirsiniz */
+  margin-right: 1rem;
+}
 
 .col-xl {
   padding: 0;
