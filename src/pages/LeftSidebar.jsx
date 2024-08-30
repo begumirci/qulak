@@ -24,8 +24,9 @@ export default function MainSidebar({ toggleCanvas, isOpenCanvas, id, setId }) {
               className={`sidebar-list__item  ${
                 isOpenCanvas && icon.id == id ? 'active' : ''
               }`}
+              onClick={() => handleClickIcon(icon.id)}
             >
-              <div onClick={() => handleClickIcon(icon.id)}>{icon.icon}</div>
+              <div>{icon.icon}</div>
             </div>
           ))}
         </div>
