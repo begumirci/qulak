@@ -3,8 +3,9 @@ import data from '../data';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
-export default function Canvas({ isOpenCanvas, toggleCanvas }) {
-  const [isActive, setIsActive] = useState(false);
+export default function Canvas({ isOpenCanvas, toggleCanvas, id }) {
+  const [active, setActive] = useState('');
+
   const percentage = 75;
   return (
     <div
@@ -55,18 +56,27 @@ export default function Canvas({ isOpenCanvas, toggleCanvas }) {
             </svg>
           </div>
           <div className='canvas-list d-flex flex-column gap-1'>
-            {data[0].general.map((general) => (
-              <div
-                key={general.id}
-                role='button'
-                className={` canvas-list__item d-flex align-items-center ${
-                  isOpenCanvas && general.id == 5 ? 'active' : ''
-                }`}
-              >
-                <div className='canvas-list__img'>{general.icon}</div>
-                <h6>{general.name}</h6>
-              </div>
-            ))}
+            {data[0].canvasList.map(
+              (item) =>
+                id == item.id && (
+                  <div key={item.id} role='button'>
+                    <div className='canvas-list d-flex flex-column gap-1'>
+                      {item.general.map((x) => (
+                        <div
+                          key={x.id}
+                          className={` canvas-list__item d-flex align-items-center ${
+                            isOpenCanvas && x.id == active ? 'active' : ''
+                          }`}
+                          onClick={() => setActive(x.id)}
+                        >
+                          <div className='canvas-list__img'>{x.icon}</div>
+                          <h6>{x.title}</h6>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )
+            )}
           </div>
         </div>
         <div style={{ flexGrow: '1' }}></div>

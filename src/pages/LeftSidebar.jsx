@@ -2,14 +2,16 @@ import { useContext } from 'react';
 import data from '../data';
 import { ContextData } from '../store/Provider';
 
-export default function MainSidebar({ toggleCanvas, isOpenCanvas }) {
+export default function MainSidebar({ toggleCanvas, isOpenCanvas, id, setId }) {
   const { changeTheme, theme } = useContext(ContextData);
   console.log(theme);
 
   function handleClickIcon(icon) {
-    if (icon == 3) {
+    if (icon == id) {
       toggleCanvas();
     }
+
+    setId(icon);
   }
   return (
     <div className='sidebar_all d-none d-lg-block  border-end '>
@@ -20,7 +22,7 @@ export default function MainSidebar({ toggleCanvas, isOpenCanvas }) {
               key={icon.id}
               role='button'
               className={`sidebar-list__item  ${
-                isOpenCanvas && icon.id == 3 ? 'active' : ''
+                isOpenCanvas && icon.id == id ? 'active' : ''
               }`}
             >
               <div onClick={() => handleClickIcon(icon.id)}>{icon.icon}</div>
@@ -80,6 +82,7 @@ export default function MainSidebar({ toggleCanvas, isOpenCanvas }) {
               fill='none'
               xmlns='http://www.w3.org/2000/svg'
               role='button'
+              onClick={() => handleClickIcon('6')}
             >
               <path
                 d='M9.00033 3.7583C9.00033 2.78722 9.78755 2 10.7586 2H13.242C14.2131 2 15.0003 2.78722 15.0003 3.75831C15.0003 5.11186 16.4656 5.95781 17.6378 5.28104C18.4788 4.79548 19.5542 5.08362 20.0398 5.92462L21.2814 8.07525C21.767 8.91625 21.4788 9.99162 20.6378 10.4772C19.4656 11.154 19.4656 12.8459 20.6378 13.5227C21.4788 14.0082 21.767 15.0836 21.2814 15.9246L20.0398 18.0752C19.5542 18.9162 18.4788 19.2044 17.6378 18.7188C16.4656 18.0421 15.0003 18.8881 15.0003 20.2416C15.0003 21.2127 14.2131 22 13.242 22H10.7587C9.78757 22 9.00033 21.2127 9.00033 20.2416C9.00033 18.8881 7.53506 18.0421 6.36285 18.7188C5.52186 19.2044 4.44648 18.9162 3.96094 18.0753L2.71926 15.9246C2.23371 15.0836 2.52186 14.0082 3.36286 13.5227C4.53508 12.8459 4.53508 11.154 3.36286 10.4772C2.52186 9.99162 2.23371 8.91624 2.71926 8.07525L3.96094 5.9246C4.44649 5.08361 5.52187 4.79547 6.36286 5.28102C7.53506 5.95779 9.00033 5.11184 9.00033 3.7583Z'

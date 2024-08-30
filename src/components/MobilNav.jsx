@@ -2,18 +2,14 @@ import data from '../data';
 import { useState } from 'react';
 
 export default function MobilNav() {
-  const [isActive, setIsActive] = useState(false);
-  const [subActive, setSubActive] = useState(false);
+  const [activeId, setActiveId] = useState(null);
+  const [subId, setSubId] = useState(null);
 
-  function handleClickActive(id) {
-    setIsActive(!isActive);
-    if (id == 1) {
-      setSubActive(true);
-    }
-  }
-  function handleSubClick() {
-    setSubActive(false);
-  }
+  const handleToggle = (id) => {
+    setActiveId((prevId) => (prevId === id ? null : id));
+    setSubId(null);
+  };
+
   return (
     <div
       className='offcanvas offcanvas-end d-lg-none'
@@ -22,7 +18,7 @@ export default function MobilNav() {
       id='offcanvasExample'
       aria-labelledby='offcanvasExampleLabel'
     >
-      <header className='padding-inline-20px  canvas__profile-cart  d-flex align-items-center justify-content-between border-bottom'>
+      <header className='padding-inline-20px canvas__profile-cart d-flex align-items-center justify-content-between border-bottom'>
         <div className='d-flex align-items-center justify-content-between py-4'>
           <img src='/sidebarIcons/AvataravatarBrian.svg' alt='' />
           <h6>Briand Ford</h6>
@@ -39,26 +35,24 @@ export default function MobilNav() {
           aria-label='Close'
         >
           <path
-            fill-rule='evenodd'
+            fillRule='evenodd'
             d='M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8'
           />
         </svg>
       </header>
 
-      <div className='d-flex flex-column gap-2 '>
+      <div className='d-flex flex-column gap-2'>
         {data[0].mobilNavbar.map((x) => (
-          <div>
+          <div key={x.id}>
             {x.subCategory ? (
               <div
-                className={`mobilNav-list__item  ${isActive ? 'active' : ''}`}
-                key={x.id}
+                className={`mobilNav-list__item ${
+                  activeId === x.id ? 'active' : ''
+                }`}
               >
                 <div
-                  data-bs-toggle='collapse'
-                  href='#collapseExample'
-                  aria-controls='collapseExample'
-                  className='mobilNav-list__title  d-flex align-items-center justify-content-between gap-2 padding-inline-20px'
-                  onClick={() => handleClickActive(x.id)}
+                  className='mobilNav-list__title d-flex align-items-center justify-content-between gap-2 padding-inline-20px'
+                  onClick={() => handleToggle(x.id)}
                 >
                   <div className='d-flex gap-3'>
                     <div>{x.icon}</div>
@@ -69,7 +63,6 @@ export default function MobilNav() {
                     width='16'
                     height='16'
                     fill='var(--text-color)'
-                    className='bi bi-arrow-down-short'
                     viewBox='0 0 16 16'
                   >
                     <path
@@ -79,26 +72,28 @@ export default function MobilNav() {
                   </svg>
                 </div>
 
-                <div className='collapse ps-5' id='collapseExample'>
+                <div
+                  className={`collapse ps-5 ${activeId === x.id ? 'show' : ''}`}
+                >
                   <div className='row mt-2'>
                     {x.subCategory.map((sub) => (
                       <div
-                        key={x.id}
-                        className={`collapse__item col-12 d-flex align-items-center gap-3 py-2  px-2 ${
-                          sub.id == 5 && subActive ? 'active' : ''
+                        key={sub.id}
+                        className={`collapse__item col-12 d-flex align-items-center gap-3 py-2 px-2 ${
+                          sub.id === subId ? 'active' : ''
                         }`}
-                        onClick={handleSubClick}
+                        onClick={() => setSubId(sub.id)}
                       >
                         <div>{sub.icon}</div>
-                        <h6>{sub.name}</h6>
+                        <h6>{sub.title}</h6>
                       </div>
                     ))}
                   </div>
                 </div>
               </div>
             ) : (
-              <div className='mobilNav-list__item ' key={x.id}>
-                <div className='mobilNav-list__title d-flex align-items-center gap-3 padding-inline-20px '>
+              <div className='mobilNav-list__item'>
+                <div className='mobilNav-list__title d-flex align-items-center gap-3 padding-inline-20px'>
                   <div>{x.icon}</div>
                   <h6>{x.name}</h6>
                 </div>
